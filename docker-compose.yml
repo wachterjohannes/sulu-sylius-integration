@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    mysql:
+        build: ./docker/mysql
+        ports:
+            - 3306:3306
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        environment:
+            MYSQL_DATABASE: "su_sylius"
+            MYSQL_USER: "sylius"
+            MYSQL_PASSWORD: "sylius"
+            MYSQL_RANDOM_ROOT_PASSWORD: 1
+            MYSQL_ROOT_HOST: "%"
+            MYSQL_HOST: "%"
+
+    elasticsearch:
+        build: ./docker/elasticsearch
+        volumes:
+            - ./data/elasticsearch:/usr/share/elasticsearch/data
+        environment:
+            ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+        ports:
+            - 9200:9200
+
+    rabbitmq:
+        build: ./docker/rabbitmq
+        ports:
+            - 5672:5672
