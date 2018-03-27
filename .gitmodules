@@ -1,0 +1,6 @@
+[submodule "SuluSyliusIntegrationPlugin"]
+	path = SuluSyliusIntegrationPlugin
+	url = git@github.com:wachterjohannes/SuluSyliusIntegrationPlugin.git
+[submodule "sulu-sylius"]
+	path = sulu-sylius
+	url = git@github.com:wachterjohannes/sulu-sylius.git
