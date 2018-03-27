@@ -9,6 +9,7 @@ Bootstrap repository which contains glue to run Sulu-Sylius example application.
 ```
 git clone git@github.com:wachterjohannes/sulu-sylius-integration.git
 cd sulu-sylius-integration
+git submodule init
 git submodule update
 ```
 
@@ -48,8 +49,7 @@ cd tests/Application
 yarn install
 yarn run gulp
 bin/console assets:install web -e test
-bin/console doctrine:database:create -e test
-bin/console doctrine:schema:create -e test
+ll webin/console doctrine:schema:create -e test
 bin/console sylius:fixtures:load -e test
 bin/console server:run -d web 127.0.0.1:8001 -e test
 ```
@@ -59,19 +59,21 @@ bin/console server:run -d web 127.0.0.1:8001 -e test
 To see if everything works together you can go to `http://127.0.0.1:8000/admin/#articles/en` (user: "admin" and
 password "admin") and see if there are already synced products.
 
-TODO screenshot of article list
+![Article-List](https://raw.githubusercontent.com/wachterjohannes/sulu-sylius-integration/master/images/article-list.png)
 
 You should see a bunch of them (already created by the sylius fixtures). If you publish a few products you should be
 able to see them on the Website Homepage `http://127.0.0.1:8000/`. There you can goto a product and add it to the cart.
 
-TODO screenshot of cart
+![Cart](https://raw.githubusercontent.com/wachterjohannes/sulu-sylius-integration/master/images/cart.png)
 
 After you finished filling up your cart you can follow the link `Add it to cart` and finish the checkout in the sylius
 application.
 
-TODO screenshot of checkout
+![Checkout](https://raw.githubusercontent.com/wachterjohannes/sulu-sylius-integration/master/images/checkout.png)
 
 To review your cart goto `http://127.0.0.1:8001/admin` and use the Sylius admin.
+
+![Checkout](https://raw.githubusercontent.com/wachterjohannes/sulu-sylius-integration/master/images/order.png)
 
 ## Disclaimer
 

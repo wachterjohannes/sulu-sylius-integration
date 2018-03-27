@@ -5,3 +5,6 @@
 # Docker
 /data
 
+# MacOS
+.DS_STORE
+
